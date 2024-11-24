@@ -24,6 +24,14 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
+		{
+			"MattiasMTS/cmp-dbee",
+			dependencies = {
+				{ "kndndrj/nvim-dbee" },
+			},
+			ft = "sql", -- optional but good to have
+			opts = {}, -- needed
+		},
 	},
 	config = function()
 		-- See `:help cmp`
@@ -87,6 +95,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "vim-dadbod-completion" },
+				{ name = "cmp-dbee" },
 			},
 		})
 	end,
