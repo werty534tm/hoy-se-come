@@ -88,7 +88,7 @@ return {
 			asm_lsp = {},
 			rust_analyzer = {},
 			jsonls = {},
-			sqlls = {},
+			bashls = {},
 			-- tsserver = {},
 			lua_ls = {
 				-- cmd = {...},
