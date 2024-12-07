@@ -4,8 +4,7 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "wlr/workspaces"
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "custom/music"
@@ -19,13 +18,23 @@
         "custom/lock",
         "custom/notificaciones"
     ],
-    "wlr/workspaces": {
-        "disable-scroll": true,
-        "sort-by-name": true,
-        "format": " {icon} ",
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "format": "{icon}",
+        "on-click": "activate",
         "format-icons": {
-            "default": ""
-        }
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " ",
+            "urgent": " ",
+            "active": " ",
+            "default": " "
+        },
+        "sort-by-number": true
     },
     "tray": {
         "icon-size": 21,

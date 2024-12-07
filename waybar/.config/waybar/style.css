@@ -17,6 +17,7 @@
   margin: 5px;
   background-color: @surface0;
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #workspaces button {
