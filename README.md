@@ -5,9 +5,9 @@ Solo GNU stow
 > Lo mismo de siempre, manin:
 <br>
 >- sudo pacman -Syu stow
-> 
+<br>
 ### Módulos
-- [zsh](./zshrc/)<br>
+- [zsh](./zshrc/)
 - [waybar](./waybar/)
 - [hyprdots](./hypr/)
 - [fastfetch](./fastfetch/)
