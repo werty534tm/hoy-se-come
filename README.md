@@ -7,12 +7,13 @@ Solo GNU stow
 sudo pacman -Syu stow
 <br>
 ### Módulos
-- [zsh](./zshrc/)
-- [waybar](./waybar/)
-- [hyprdots](./hypr/)
-- [fastfetch](./fastfetch/)
-- [awesome](./awesome/)
-- [swaync](./swaync/)
-- [kitty](./kitty/)
-- [neovim](./nvim/) 
+<br>
+- [zsh](zshrc/)
+- [waybar](waybar/)
+- [hyprdots](hypr/)
+- [fastfetch](fastfetch/)
+- [awesome](awesome/)
+- [swaync](swaync/)
+- [kitty](kitty/)
+- [neovim](nvim/) 
 
