@@ -7,7 +7,7 @@ Solo GNU stow
 >- sudo pacman -Syu stow
 > 
 ### Módulos
-- [zsh](./zshrc/) 
+- [zsh](./zshrc/)<br>
 - [waybar](./waybar/)
 - [hyprdots](./hypr/)
 - [fastfetch](./fastfetch/)
