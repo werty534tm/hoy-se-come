@@ -4,7 +4,7 @@ Solo GNU stow
 <br>
 > Lo mismo de siempre, manin:
 <br>
-> sudo pacman -Syu stow
+sudo pacman -Syu stow
 <br>
 ### Módulos
 - [zsh](./zshrc/)
