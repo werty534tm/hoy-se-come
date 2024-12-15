@@ -4,8 +4,7 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "network"
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "custom/music"

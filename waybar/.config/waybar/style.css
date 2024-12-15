@@ -26,6 +26,10 @@
   padding: 0.4rem;
 }
 
+#workspaces button.empty {
+  color: @surface2
+}
+
 #workspaces button.active {
   color: @sky;
   border-radius: 1rem;
