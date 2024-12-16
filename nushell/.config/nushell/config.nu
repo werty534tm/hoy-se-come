@@ -91,5 +91,7 @@ $env.config = {
 }
 use ~/.cache/starship/init.nu
 alias nv = nvim
+alias la = ls -a
+alias ll = ls -la
 source ./nupm/modules/nu-themes/catppuccin-mocha.nu
 source ~/.cache/carapace/init.nu
