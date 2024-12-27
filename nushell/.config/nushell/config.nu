@@ -93,5 +93,7 @@ use ~/.cache/starship/init.nu
 alias nv = nvim
 alias la = ls -a
 alias ll = ls -la
+alias k = kubectl
+alias kg = kubectl get
 source ./nupm/modules/nu-themes/catppuccin-mocha.nu
 source ~/.cache/carapace/init.nu
