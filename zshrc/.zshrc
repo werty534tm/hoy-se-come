@@ -32,7 +32,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -127,17 +127,19 @@ unsetopt BEEP
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 alias actualizar="cp -ruv ~/.config ~/configurarch/.config-tomasturbado, cp -r ~/.xprofile ~/configurarch/.config-tomasturbado, cp -r ~/.profile ~/configurarch/.config-tomasturbado, cp -r ~/.zshrc ~/configurarch/.config-tomasturbado"
 alias olympus="./olympuscarpeta/linux.main/olympus"
-alias coño="setxkbmap es"
 alias grep="grep --color=auto"
 alias ls="lsd"
 alias bat="bat --theme=Catppuccin\ Mocha"
-alias polybar="$HOME/.config/polybar/launcher.sh"
 alias dc="sl"
 alias nv="nvim"
 alias fastfetch="fastfetch --logo ~/Imágenes/lenox.png --logo-width 25 --logo-height 10"
 
+alias k="kubectl"
+alias kg="kubectl get"
+alias ka="kubectl apply"
+alias kd="kubectl delete"
+
 # Arreglar el nix-shell suceso
 prompt_nix_shell_setup
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"

@@ -40,7 +40,7 @@
         "escape": true,
         "interval": 5,
         "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
+        "exec": "playerctl metadata --format='{{ title }}' 2>/dev/null",
         "on-click": "playerctl play-pause",
         "max-length": 50
     },

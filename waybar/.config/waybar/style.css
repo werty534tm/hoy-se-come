@@ -13,7 +13,7 @@
 }
 
 #workspaces {
-  border-radius: 1rem;
+  border-radius: 0rem;
   margin: 5px;
   background-color: @surface0;
   margin-left: 1rem;
@@ -61,6 +61,8 @@
 
 #battery {
   color: @green;
+  border-radius: 1rem;
+  margin-right: 1rem;
 }
 
 #battery.charging {

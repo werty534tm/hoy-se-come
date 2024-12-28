@@ -4,6 +4,7 @@ return {
 	event = "VeryLazy",
 	opts = {
 		-- add any options here
+		replace = true,
 	},
 	dependencies = {
 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
