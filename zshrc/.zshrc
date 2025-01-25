@@ -1,11 +1,5 @@
 echo ""
 fastfetch --logo ~/Imágenes/lenox.png --logo-width 25 --logo-height 10
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # uwufetch -i
 # cargo
@@ -131,8 +125,10 @@ alias grep="grep --color=auto"
 alias ls="lsd"
 alias bat="bat --theme=Catppuccin\ Mocha"
 alias dc="sl"
+alias equesdeh="sl"
 alias nv="nvim"
 alias fastfetch="fastfetch --logo ~/Imágenes/lenox.png --logo-width 25 --logo-height 10"
+alias cd="z"
 
 alias k="kubectl"
 alias kg="kubectl get"
@@ -143,3 +139,4 @@ alias kd="kubectl delete"
 prompt_nix_shell_setup
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
