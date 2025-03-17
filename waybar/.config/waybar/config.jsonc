@@ -4,10 +4,11 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "custom/hogardeljosepo"
     ],
     "modules-center": [
-        "custom/music"
+        "custom/music",
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "pulseaudio",
@@ -34,6 +35,9 @@
     "tray": {
         "icon-size": 21,
         "spacing": 10
+    },
+    "custom/hogardeljosepo": {
+        "format": " ",
     },
     "custom/music": {
         "format": "  {}",

@@ -12,8 +12,16 @@
   margin: 5px 5px;
 }
 
+#custom-hogardeljosepo {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.4rem;
+}
 #workspaces {
-  border-radius: 0rem;
+  border-radius: 1rem;
   margin: 5px;
   background-color: @surface0;
   margin-left: 1rem;
@@ -62,7 +70,6 @@
 #battery {
   color: @green;
   border-radius: 1rem;
-  margin-right: 1rem;
 }
 
 #battery.charging {
