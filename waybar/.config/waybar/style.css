@@ -1,21 +1,24 @@
 @import "mocha.css";
+@import "ermenegildo.css";
 
 * {
   font-family: ComicShannsMono Nerd Font;
   font-size: 17px;
+  color: @color1;
   min-height: 0;
 }
 
 #waybar {
   background: transparent;
-  color: @text;
+  color: @foreground;
   margin: 5px 5px;
 }
 
 #custom-hogardeljosepo {
   border-radius: 1rem;
   margin: 5px;
-  background-color: @surface0;
+  background-color: @foreground;
+  color: @color1;
   margin-left: 1rem;
   margin-right: 1rem;
   padding: 0.4rem;
@@ -23,28 +26,26 @@
 #workspaces {
   border-radius: 1rem;
   margin: 5px;
-  background-color: @surface0;
+  background-color: @foreground;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
 #workspaces button {
-  color: @lavender;
+  color: @color1;
   border-radius: 1rem;
   padding: 0.4rem;
 }
 
 #workspaces button.empty {
-  color: @surface2
 }
 
 #workspaces button.active {
-  color: @sky;
   border-radius: 1rem;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
+  color: @color6;
   border-radius: 1rem;
 }
 
@@ -56,32 +57,32 @@
 #pulseaudio,
 #custom-lock,
 #custom-notificaciones{
-  background-color: @surface0;
+  background-color: @foreground;
   padding: 0.5rem 1rem;
   margin: 5px 0;
 }
 
 #clock {
-  color: @blue;
+  color: @color1;
   border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
 }
 
 #battery {
-  color: @green;
+  color: @color1;
   border-radius: 1rem;
 }
 
 #battery.charging {
-  color: @green;
+  color: @color1;
 }
 
 #battery.warning:not(.charging) {
-  color: @red;
+  color: @color1;
 }
 
 #backlight {
-  color: @yellow;
+  color: @color1;
 }
 
 #backlight, #battery {
@@ -89,28 +90,30 @@
 }
 
 #pulseaudio {
-  color: @maroon;
+  color: @color1;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
 
 #custom-music {
-  color: @mauve;
+  color: @color1;
   border-radius: 1rem;
 }
 
 #custom-lock {
     border-radius: 1rem 0px 0px 1rem;
-    color: @lavender;
+    color: @color1;
 }
 
 #custom-notificaciones{
     margin-right: 1rem;
     border-radius: 0px 1rem 1rem 0px;
-    color: @blue;
+    color: @color1;
 }
 
 #tray {
+  background-color: @foreground;
+  color: @color1;
   margin-right: 1rem;
   border-radius: 1rem;
 }
