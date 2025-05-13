@@ -1,17 +1,18 @@
 {
     "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
+    "position": "left", // Waybar position (top|bottom|left|right)
+    "width": 25, // Waybar width
+    "margin": "5px",
     // Choose the order of the modules
     "modules-left": [
-        "custom/hogardeljosepo"
-    ],
-    "modules-center": [
-        "custom/music",
+        "custom/hogardeljosepo",
         "hyprland/workspaces"
     ],
+    "modules-center": [
+        "custom/music"
+    ],
     "modules-right": [
-        "pulseaudio",
+        "custom/pipewire",
         "backlight",
         "battery",
         "clock",
@@ -20,39 +21,48 @@
         "custom/notificaciones"
     ],
     "hyprland/workspaces": {
+        "format": "{windows}",
+        "format-icons": {
+            "default": "",
+            "empty": "  "
+        },
         "persistent-workspaces": {
             "*": 5
         },
-        "format": "{icon}",
-        "on-click": "activate",
-        "format-icons": {
-            "urgent": " ",
-            "active": " ",
-            "default": " "
-        },
-        "sort-by-number": true
+        "icon-size": "40",
+        "format-window-separator": "\n",
+        "window-rewrite-default": "?",
+        "window-rewrite": {
+            "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
+            "class<firefox>": " ", // Windows whose classes are "firefox"
+            "class<Brave-browser>": " ",
+            "class<ulauncher>": "",
+            "title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "kitty": " ", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+            "code": "󰨞 "
+        }
     },
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
     "custom/hogardeljosepo": {
-        "format": " ",
+        "format": " "
     },
-    "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 5,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}' 2>/dev/null",
-        "on-click": "playerctl play-pause",
-        "max-length": 50
-    },
+    // "custom/music": {
+    //     "format": "  {}",
+    //     "escape": true,
+    //     "interval": 5,
+    //     "tooltip": false,
+    //     "exec": "playerctl metadata --format='{{ title }}' 2>/dev/null",
+    //     "on-click": "playerctl play-pause",
+    //     "max-length": 50
+    // },
     "clock": {
         "timezone": "Europe/Madrid",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
+        "format": "{:%H<sub>\n</sub>%M}"
     },
     "backlight": {
         "device": "intel_backlight",
@@ -79,18 +89,18 @@
         "format-plugged": "󰂄",
         "format-alt": "{icon}",
         "format-icons": [
-            "󰂎",
-            "󰂎",
-            "󰁺",
-            "󰁻",
-            "󰁼",
-            "󰁽",
-            "󰁾",
-            "󰁿",
-            "󰂀",
-            "󰂁",
-            "󰂂",
-            "󰁹"
+            " 󰂎  ",
+            " 󰂎  ",
+            " 󰁺  ",
+            " 󰁻  ",
+            " 󰁼  ",
+            " 󰁽  ",
+            " 󰁾  ",
+            " 󰁿  ",
+            " 󰂀  ",
+            " 󰂁  ",
+            " 󰂂  ",
+            " 󰁹  "
         ]
     },
     "pulseaudio": {
@@ -105,6 +115,13 @@
             ]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/pipewire": {
+        "tooltip": false,
+        "max-length": 6,
+        "exec": "$HOME/.config/waybar/scripts/pipewire.sh",
+        "on-click": "pavucontrol",
+        "on-click-right": "qpwgraph"
     },
     "custom/lock": {
         "tooltip": false,

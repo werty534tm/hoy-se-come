@@ -1,0 +1,119 @@
+@import "mocha.css";
+@import "ermenegildo.css";
+
+* {
+  font-family: ComicShannsMono Nerd Font;
+  font-size: 17px;
+  color: @color1;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @foreground;
+  margin: 5px 5px;
+}
+
+#custom-hogardeljosepo {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @foreground;
+  color: @color1;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.4rem;
+}
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @foreground;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#workspaces button {
+  color: @color1;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.empty {
+}
+
+#workspaces button.active {
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @color6;
+  border-radius: 1rem;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-notificaciones{
+  background-color: @foreground;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: @color1;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+}
+
+#battery {
+  color: @color1;
+  border-radius: 1rem;
+}
+
+#battery.charging {
+  color: @color1;
+}
+
+#battery.warning:not(.charging) {
+  color: @color1;
+}
+
+#backlight {
+  color: @color1;
+}
+
+#backlight, #battery {
+    border-radius: 0;
+}
+
+#pulseaudio {
+  color: @color1;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#custom-music {
+  color: @color1;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @color1;
+}
+
+#custom-notificaciones{
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @color1;
+}
+
+#tray {
+  background-color: @foreground;
+  color: @color1;
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
