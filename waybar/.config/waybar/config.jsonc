@@ -37,6 +37,7 @@
             "class<firefox>": " ", // Windows whose classes are "firefox"
             "class<Brave-browser>": " ",
             "class<ulauncher>": "",
+            "class<steam>": " ",
             "title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "kitty": " ", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
             "code": "󰨞 "
