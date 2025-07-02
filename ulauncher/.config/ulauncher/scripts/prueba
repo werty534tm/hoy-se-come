@@ -1,5 +1,0 @@
-#!/bin/env bash
-
-dog=$(python3 randass_dog.py)
-
-brave $dog
