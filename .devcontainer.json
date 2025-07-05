@@ -1,7 +1,0 @@
-{
-  "image": "python",
-  "features": {
-    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
-    "ghcr.io/eitsupi/devcontainer-features/nushell:0": {}
-  }
-}
