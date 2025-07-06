@@ -35,6 +35,7 @@ require('which-key').setup {
       F12 = '<F12>',
     },
   },
+  preset = "modern"
 }
 
 -- Document existing key chains

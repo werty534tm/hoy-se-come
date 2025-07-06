@@ -69,6 +69,33 @@
             ${builtins.readFile ./plugins/which-key.lua}
           '';
       }
+      # Lsp
+      {
+        plugin = nvim-lspconfig;
+        type ="lua";
+        config =
+          ''
+            ${builtins.readFile ./plugins/lspconfig.lua}
+          '';
+      }
+      # Loading status
+      {
+        plugin = fidget-nvim;
+        type = "lua";
+        config =
+          ''
+            require("fidget").setup({})
+          '';
+      }
+      # Configuración chachi piruli de lua_ls
+      {
+        plugin = lazydev-nvim;
+        type = "lua";
+        config =
+          ''
+            ${builtins.readFile ./plugins/lazydev.lua}
+          '';
+      }
       # Cant define this xddd
       # Just mini
       # Dont think too hard about it :D
