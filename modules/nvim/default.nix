@@ -1,6 +1,9 @@
 {pkgs, ... }:
 
 {
+
+  home.file.".config/nvim/lua/resources/ascii.lua".source = ./resources/ascii.lua;
+
   programs.neovim = {
     enable = true;
 
@@ -39,6 +42,15 @@
           require("gitsigns").setup()
         '';
       }
+      # Welcoming dashboard
+      {
+        plugin = alpha-nvim;
+        type = "lua";
+        config = 
+        ''
+          ${builtins.readFile ./plugins/alpha.lua}
+        '';
+      }
       # Cant define this xddd
       # Just mini
       # Dont think too hard about it :D
@@ -61,6 +73,7 @@
 
     extraLuaConfig= ''
       ${builtins.readFile ./options.lua}
+      ${builtins.readFile ./keymaps.lua}
     '';
 
     extraPackages = with pkgs; [
