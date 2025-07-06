@@ -38,18 +38,36 @@
         plugin = gitsigns-nvim;
         type = "lua";
         config = 
-        ''
-          require("gitsigns").setup()
-        '';
+          ''
+            require("gitsigns").setup()
+          '';
       }
       # Welcoming dashboard
       {
         plugin = alpha-nvim;
         type = "lua";
         config = 
-        ''
-          ${builtins.readFile ./plugins/alpha.lua}
-        '';
+          ''
+            ${builtins.readFile ./plugins/alpha.lua}
+          '';
+      }
+      # Fuzzy finder
+      {
+        plugin = telescope-nvim;
+        type = "lua";
+        config =
+          ''
+            ${builtins.readFile ./plugins/telescope.lua}
+          '';
+      }
+      # Which-key (I love folke)
+      {
+        plugin = which-key-nvim;
+        type = "lua";
+        config =
+          ''
+            ${builtins.readFile ./plugins/which-key.lua}
+          '';
       }
       # Cant define this xddd
       # Just mini
@@ -69,6 +87,8 @@
       # Dependencias
       nvim-web-devicons
       plenary-nvim
+      telescope-fzf-native-nvim
+      telescope-ui-select-nvim
       ];
 
     extraLuaConfig= ''
