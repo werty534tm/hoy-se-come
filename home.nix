@@ -5,6 +5,7 @@ in
 {
     # Imports
   imports = [
+    ./modules/hypr
     ./modules/nvim
   ];
 
