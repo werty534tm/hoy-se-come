@@ -3,7 +3,7 @@ let
   neovim = import ./modules/nvim;
 in
 {
-  # Imports
+    # Imports
   imports = [
     ./modules/nvim
   ];

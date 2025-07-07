@@ -1,7 +1,7 @@
 {pkgs, ... }:
 
 {
-
+  
   home.file.".config/nvim/lua/resources/ascii.lua".source = ./resources/ascii.lua;
 
   programs.neovim = {
@@ -13,11 +13,6 @@
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      # LSP setup
-      # {
-      #   plugin = nvim-lspconfig;
-      #   config = toLuaFile ./nvim/plugin/lsp.lua;
-      # }
       # Theming
       {
         plugin = gruvbox-nvim;
