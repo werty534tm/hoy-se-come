@@ -1,5 +1,6 @@
 {pkgs, ...}:
 {
+  home.file.".config/hypr/resources/ign-waifu.png".source = ./resources/ign-waifu.png;
   services = {
     hyprpaper = {
       enable = true;
@@ -8,11 +9,11 @@
         splash = false;
 
         preload = [
-          "./resources/ign-waifu.png"
+          "~/.config/hypr/resources/ign-waifu.png"
         ];
 
         wallpaper = [
-          ", ./resources/ign-waifu.png"
+          ", ~/.config/hypr/resources/ign-waifu.png"
         ];
       };
     };
