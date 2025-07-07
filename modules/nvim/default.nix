@@ -96,13 +96,36 @@
             ${builtins.readFile ./plugins/lazydev.lua}
           '';
       }
+      {
+        plugin = conform-nvim;
+        type = "lua";
+        config =
+          ''
+            ${builtins.readFile ./plugins/conform.lua}
+          '';
+      }
+      {
+        plugin = nvim-cmp;
+        type = "lua";
+        config =
+          ''
+            ${builtins.readFile ./plugins/completion.lua}
+          '';
+      }
       # Cant define this xddd
       # Just mini
       # Dont think too hard about it :D
       mini-nvim
 
-      # Mini status bottom bar
-      lualine-nvim
+      # Status bottom bar
+      {
+        plugin = lualine-nvim;
+        type = "lua";
+        config =
+          ''
+            ${builtins.readFile ./plugins/lualine.lua}
+          '';
+      }
 
       # Helper for writing nix expressions
       vim-nix
@@ -112,10 +135,21 @@
       nvim-treesitter.withAllGrammars
       
       # Dependencias
+      # For too many things :C
       nvim-web-devicons
       plenary-nvim
+
+      # For telescope
       telescope-fzf-native-nvim
       telescope-ui-select-nvim
+
+      # For completion/snippets
+      lspkind-nvim
+      cmp-nvim-lsp
+      cmp-path
+      cmp-buffer
+      cmp_luasnip
+      luasnip
       ];
 
     extraLuaConfig= ''
@@ -124,9 +158,20 @@
     '';
 
     extraPackages = with pkgs; [
+      # LSP
       lua-language-server
       nixd
+      yaml-language-server
 
+      # Formatters
+      stylua
+      alejandra
+      basedpyright
+      isort
+      black
+      yamlfmt
+
+      # Clipboard
       xclip
       wl-clipboard
     ];
