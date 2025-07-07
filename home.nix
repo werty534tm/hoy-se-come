@@ -1,7 +1,4 @@
-{ config, pkgs, ... }:
-let
-  neovim = import ./modules/nvim;
-in
+{ config, pkgs, inputs, ... }:
 {
     # Imports
   imports = [
@@ -24,6 +21,7 @@ in
     fd
     yazi
     hyprpaper
+    inputs.quickshell.packages."x86_64-linux".default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

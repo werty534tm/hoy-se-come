@@ -8,10 +8,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    quickshell = {
+      # add ?ref=<tag> to track a tag
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+
+      # THIS IS IMPORTANT
+      # Mismatched system dependencies will lead to crashes and other issues.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -27,6 +35,7 @@
 
           # Optionally use extraSpecialArgs
           # to pass through arguments to home.nix
+          extraSpecialArgs = { inherit inputs; };
         };
       };
     };

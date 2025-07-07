@@ -1,5 +1,5 @@
 local map = function(keys, func, desc)
-  vim.keymap.set("n", keys, func, {desc = "LSP: " .. desc})
+	vim.keymap.set("n", keys, func, { desc = "LSP: " .. desc })
 end
 
 map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
@@ -12,10 +12,11 @@ map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 map("<leader>th", function()
-  vim.lsp.inlay_hint.enable()
+	vim.lsp.inlay_hint.enable()
 end, "[T]oggle Inlay [H]ints")
 
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('basedpyright')
-vim.lsp.enable('nixd')
-vim.lsp.enable('yamlls')
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("basedpyright")
+vim.lsp.enable("nixd")
+vim.lsp.enable("yamlls")
+vim.lsp.enable("qmlls")
