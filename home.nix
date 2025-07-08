@@ -2,8 +2,9 @@
 {
     # Imports
   imports = [
-    ./modules/hypr
-    ./modules/nvim
+    ./homeModules/hypr
+    ./homeModules/nvim
+    ./homeModules/wofi
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
