@@ -2,13 +2,18 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
-
+{ config, lib, pkgs, inputs, ... }:
+let
+  # an exhaustive example can be found in flake.nix
+   sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
+      theme = "rei"; # select the config of your choice
+   };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./firefox.nix
+      ./modules/firefox.nix
     ];
   # Enable zram intead of swap
   zramSwap.enable = true;
@@ -51,13 +56,25 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.displayManager.sddm = {
+    package = pkgs.kdePackages.sddm; # use qt6 version of sddm
     enable = true;
+    theme = sddm-theme.pname;
+    # the following changes will require sddm to be restarted to take
+    # effect correctly. It is recomend to reboot after this
+    extraPackages = sddm-theme.propagatedBuildInputs;
+    settings = {
+      # required for styling the virtual keyboard
+      General = {
+        GreeterEnvironment = "QML2_IMPORT_PATH=${sddm-theme}/share/sddm/themes/${sddm-theme.pname}/components/,QT_IM_MODULE=qtvirtualkeyboard";
+        InputMethod = "qtvirtualkeyboard";
+      };
+    };
   };
 
   
 
   # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
+  services.xserver.xkb.layout = "es";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
@@ -141,6 +158,7 @@
     oh-my-zsh
     zsh-powerlevel10k
     zoxide
+    sddm-theme sddm-theme.test
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

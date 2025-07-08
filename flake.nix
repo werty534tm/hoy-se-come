@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of zsh-upmyass";
+  description = "All of my dotfiles";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -16,6 +16,10 @@
       # Mismatched system dependencies will lead to crashes and other issues.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+   };
   };
 
   outputs =
@@ -25,6 +29,15 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      nixosConfigurations.hoy-compramos-tuercas = nixpkgs.lib.nixosSystem{
+        inherit system;
+        modules = [
+          ./configuration.nix
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
+      # Home manager config
       homeConfigurations = {
         zsh-upmyass = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
