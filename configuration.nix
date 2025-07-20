@@ -8,6 +8,9 @@ let
    sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
       theme = "rei"; # select the config of your choice
    };
+   sddm-astronaut = pkgs.sddm-astronaut.override {
+     embeddedTheme = "jake_the_dog";
+   };
 in
 {
   imports =
@@ -58,14 +61,14 @@ in
   services.displayManager.sddm = {
     package = pkgs.kdePackages.sddm; # use qt6 version of sddm
     enable = true;
-    theme = sddm-theme.pname;
+    theme = "sddm-astronaut-theme";
     # the following changes will require sddm to be restarted to take
     # effect correctly. It is recomend to reboot after this
     extraPackages = sddm-theme.propagatedBuildInputs;
     settings = {
       # required for styling the virtual keyboard
       General = {
-        GreeterEnvironment = "QML2_IMPORT_PATH=${sddm-theme}/share/sddm/themes/${sddm-theme.pname}/components/,QT_IM_MODULE=qtvirtualkeyboard";
+        # GreeterEnvironment = "QML2_IMPORT_PATH=${sddm-theme}/share/sddm/themes/${sddm-theme.pname}/components/,QT_IM_MODULE=qtvirtualkeyboard";
         InputMethod = "qtvirtualkeyboard";
       };
     };
@@ -88,6 +91,8 @@ in
     pulse.enable = true;
   };
 
+  services.upower.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -106,27 +111,9 @@ in
   qt.enable = true;
   programs= {
     neovim.enable = true;
-    zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      zsh-autoenv.enable = true;
-      syntaxHighlighting.enable = true;
-      promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      ohMyZsh = {
-        enable = true;
-	plugins = [
-          "git"
-	  "history"
-	  "docker"
-	  "docker-compose"
-	  "lol"
-	  "virtualenv"
-	  "zoxide"
-	];
-      };
-    };
     hyprland.enable = true;
     git.enable = true;
+    zsh.enable = true;
   };
 
   fonts.packages = [
@@ -137,6 +124,8 @@ in
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     bat
+    sddm-astronaut
+    networkmanagerapplet
     kdePackages.full
     kdePackages.qtquick3d
     eza

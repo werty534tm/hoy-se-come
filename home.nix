@@ -5,6 +5,7 @@
     ./homeModules/hypr
     ./homeModules/nvim
     ./homeModules/wofi
+    ./homeModules/zsh
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -22,6 +23,7 @@
     fd
     yazi
     hyprpaper
+    zinit
     inputs.quickshell.packages."x86_64-linux".default
   ];
 
