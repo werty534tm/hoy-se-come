@@ -21,8 +21,12 @@ zinit ice depth"1"
 zinit light romkatv/powerlevel10k
 source ~/.p10k.zsh
 
-
-zinit light zsh-users/zsh-autosuggestions
+zinit ice silent wait'!0'
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit ice silent wait'!1'
+zinit light Aloxaf/fzf-tab
+
+zinit ice silent wait'!1'
+zinit light zsh-users/zsh-autosuggestions
 
 

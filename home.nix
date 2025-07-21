@@ -25,6 +25,7 @@
     tree-sitter
     ripgrep
     fd
+    fzf
     yazi
     hyprpaper
     zinit
