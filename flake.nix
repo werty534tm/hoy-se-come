@@ -19,37 +19,38 @@
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
-   };
+    };
   };
 
-  outputs =
-    { nixpkgs, home-manager, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      nixosConfigurations.hoy-compramos-tuercas = nixpkgs.lib.nixosSystem{
-        inherit system;
-        modules = [
-          ./configuration.nix
-        ];
-        specialArgs = { inherit inputs; };
-      };
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    nixosConfigurations.hoy-compramos-tuercas = nixpkgs.lib.nixosSystem {
+      inherit system;
+      modules = [
+        ./configuration.nix
+      ];
+      specialArgs = {inherit inputs;};
+    };
 
-      # Home manager config
-      homeConfigurations = {
-        zsh-upmyass = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+    # Home manager config
+    homeConfigurations = {
+      zsh-upmyass = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-          # Specify your home configuration modules here, for example,
-          # the path to your home.nix.
-          modules = [ ./home.nix ];
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [./home.nix];
 
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
-          extraSpecialArgs = { inherit inputs; };
-        };
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
+        extraSpecialArgs = {inherit inputs;};
       };
     };
+  };
 }

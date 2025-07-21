@@ -1,7 +1,4 @@
-{pkgs, ... }:
-
-{
-  
+{pkgs, ...}: {
   home.file.".config/nvim/lua/resources/ascii.lua".source = ./resources/ascii.lua;
 
   programs.neovim = {
@@ -22,90 +19,80 @@
       {
         plugin = yazi-nvim;
         type = "lua";
-        config =
-          ''
-            require("yazi").setup()
-            vim.keymap.set('n', '<leader>e', function() require("yazi").yazi() end)
-          '';
+        config = ''
+          require("yazi").setup()
+          vim.keymap.set('n', '<leader>e', function() require("yazi").yazi() end)
+        '';
       }
       # Git stuff
       {
         plugin = gitsigns-nvim;
         type = "lua";
-        config = 
-          ''
-            require("gitsigns").setup()
-          '';
+        config = ''
+          require("gitsigns").setup()
+        '';
       }
       # Welcoming dashboard
       {
         plugin = alpha-nvim;
         type = "lua";
-        config = 
-          ''
-            ${builtins.readFile ./plugins/alpha.lua}
-          '';
+        config = ''
+          ${builtins.readFile ./plugins/alpha.lua}
+        '';
       }
       # Fuzzy finder
       {
         plugin = telescope-nvim;
         type = "lua";
-        config =
-          ''
-            ${builtins.readFile ./plugins/telescope.lua}
-          '';
+        config = ''
+          ${builtins.readFile ./plugins/telescope.lua}
+        '';
       }
       # Which-key (I love folke)
       {
         plugin = which-key-nvim;
         type = "lua";
-        config =
-          ''
-            ${builtins.readFile ./plugins/which-key.lua}
-          '';
+        config = ''
+          ${builtins.readFile ./plugins/which-key.lua}
+        '';
       }
       # Lsp
       {
         plugin = nvim-lspconfig;
-        type ="lua";
-        config =
-          ''
-            ${builtins.readFile ./plugins/lspconfig.lua}
-          '';
+        type = "lua";
+        config = ''
+          ${builtins.readFile ./plugins/lspconfig.lua}
+        '';
       }
       # Loading status
       {
         plugin = fidget-nvim;
         type = "lua";
-        config =
-          ''
-            require("fidget").setup({})
-          '';
+        config = ''
+          require("fidget").setup({})
+        '';
       }
       # Configuración chachi piruli de lua_ls
       {
         plugin = lazydev-nvim;
         type = "lua";
-        config =
-          ''
-            ${builtins.readFile ./plugins/lazydev.lua}
-          '';
+        config = ''
+          ${builtins.readFile ./plugins/lazydev.lua}
+        '';
       }
       {
         plugin = conform-nvim;
         type = "lua";
-        config =
-          ''
-            ${builtins.readFile ./plugins/conform.lua}
-          '';
+        config = ''
+          ${builtins.readFile ./plugins/conform.lua}
+        '';
       }
       {
         plugin = nvim-cmp;
         type = "lua";
-        config =
-          ''
-            ${builtins.readFile ./plugins/completion.lua}
-          '';
+        config = ''
+          ${builtins.readFile ./plugins/completion.lua}
+        '';
       }
       # Cant define this xddd
       # Just mini
@@ -116,19 +103,17 @@
       {
         plugin = lualine-nvim;
         type = "lua";
-        config =
-          ''
-            ${builtins.readFile ./plugins/lualine.lua}
-          '';
+        config = ''
+          ${builtins.readFile ./plugins/lualine.lua}
+        '';
       }
 
       # Helper for writing nix expressions
       vim-nix
 
-      
       # Treesitter
       nvim-treesitter.withAllGrammars
-      
+
       # Dependencias
       # For too many things :C
       nvim-web-devicons
@@ -145,9 +130,9 @@
       cmp-buffer
       cmp_luasnip
       luasnip
-      ];
+    ];
 
-    extraLuaConfig= ''
+    extraLuaConfig = ''
       ${builtins.readFile ./options.lua}
       ${builtins.readFile ./keymaps.lua}
     '';

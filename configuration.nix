@@ -1,23 +1,26 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, inputs, ... }:
-let
-  # an exhaustive example can be found in flake.nix
-   sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
-      theme = "rei"; # select the config of your choice
-   };
-   sddm-astronaut = pkgs.sddm-astronaut.override {
-     embeddedTheme = "jake_the_dog";
-   };
-in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./modules/firefox.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: let
+  # an exhaustive example can be found in flake.nix
+  sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
+    theme = "rei"; # select the config of your choice
+  };
+  sddm-astronaut = pkgs.sddm-astronaut.override {
+    embeddedTheme = "jake_the_dog";
+  };
+in {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./modules/firefox.nix
+  ];
   # Enable zram intead of swap
   zramSwap.enable = true;
   # Enable hyprland
@@ -39,7 +42,7 @@ in
   networking.hostName = "hoy-compramos-tuercas"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
@@ -74,8 +77,6 @@ in
     };
   };
 
-  
-
   # Configure keymap in X11
   services.xserver.xkb.layout = "es";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -99,17 +100,17 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.zsh-upmyass = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
     ];
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   qt.enable = true;
-  programs= {
+  programs = {
     neovim.enable = true;
     hyprland.enable = true;
     git.enable = true;
@@ -147,7 +148,8 @@ in
     oh-my-zsh
     zsh-powerlevel10k
     zoxide
-    sddm-theme sddm-theme.test
+    sddm-theme
+    sddm-theme.test
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -192,6 +194,4 @@ in
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
-

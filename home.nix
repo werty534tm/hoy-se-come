@@ -1,6 +1,10 @@
-{ config, pkgs, inputs, ... }:
 {
-    # Imports
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  # Imports
   imports = [
     ./homeModules/hypr
     ./homeModules/nvim
@@ -17,7 +21,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     tree-sitter
     ripgrep
     fd

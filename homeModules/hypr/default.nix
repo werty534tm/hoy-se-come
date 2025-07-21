@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   home.file.".config/hypr/resources/ign-waifu.png".source = ./resources/ign-waifu.png;
   services = {
     hyprpaper = {
