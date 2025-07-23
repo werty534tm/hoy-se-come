@@ -25,10 +25,16 @@
     tree-sitter
     ripgrep
     fd
+    lsd
+    bat
+    bat-extras.batman
+    hyperfine
+    ponysay
     fzf
     yazi
     hyprpaper
     zinit
+    zoxide
     inputs.quickshell.packages."x86_64-linux".default
   ];
 

@@ -124,8 +124,8 @@ in {
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    bat
     sddm-astronaut
+    nix-output-monitor
     networkmanagerapplet
     kdePackages.full
     kdePackages.qtquick3d
@@ -134,6 +134,7 @@ in {
     wl-clipboard
     xclip
     rustup
+    viu
     unzip
     clang
     kitty
@@ -147,7 +148,6 @@ in {
     ulauncher
     oh-my-zsh
     zsh-powerlevel10k
-    zoxide
     sddm-theme
     sddm-theme.test
   ];
