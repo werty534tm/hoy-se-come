@@ -6,6 +6,7 @@
 }: {
   # Imports
   imports = [
+    ./homeModules/kitty
     ./homeModules/hypr
     ./homeModules/nvim
     ./homeModules/wofi
@@ -23,6 +24,7 @@
   # environment.
   home.packages = with pkgs; [
     tree-sitter
+    haskellPackages.patat
     ripgrep
     fd
     lsd
