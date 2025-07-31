@@ -94,6 +94,9 @@ in {
 
   services.upower.enable = true;
 
+  # services.systembus-notify.enable = true;
+  services.dbus.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -145,12 +148,18 @@ in {
     fastfetch
     wget
     brightnessctl
-    ulauncher
-    oh-my-zsh
+    libnotify
     zsh-powerlevel10k
     sddm-theme
     sddm-theme.test
   ];
+
+  nixpkgs.config = {
+    /*
+    allowBroken = true;
+    */
+    allowUnfree = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
