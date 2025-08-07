@@ -41,6 +41,7 @@ zinit ice silent wait'!2'
 zinit light MichaelAquilina/zsh-you-should-use
 
 unsetopt BEEP # <- Most importtannt part of the config
+CASE_SENSITIVE="TRUE"
 
 unalias zi
 eval "$(zoxide init zsh)"

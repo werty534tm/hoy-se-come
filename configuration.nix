@@ -115,6 +115,7 @@ in {
   qt.enable = true;
   programs = {
     neovim.enable = true;
+    steam.enable = true;
     hyprland.enable = true;
     git.enable = true;
     zsh.enable = true;

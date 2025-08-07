@@ -11,7 +11,7 @@
       tree = "lsd --tree";
       cd = "z";
       nv = "nvim";
-      man = "BAT_THEME='default' batman";
+      man = "BAT_THEME='gruvbox-light' batman";
 
       # Docker compose aliases stolen from François Vantomme <akarzim@gmail.com>
       dkc = "docker-compose";
