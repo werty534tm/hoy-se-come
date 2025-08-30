@@ -21,19 +21,23 @@ in {
   zramSwap.enable = true;
 
   # grub grub grub grub :D
-  boot.loader = {
-    grub = {
-      enable = true;
-      useOSProber = true;
-      efiSupport = true;
-      device = "nodev";
-    };
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
+  boot = {
+    loader = {
+      grub = {
+        enable = true;
+        useOSProber = true;
+        efiSupport = true;
+        device = "nodev";
+      };
+
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
     };
 
     plymouth.enable = true;
+
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
