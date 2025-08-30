@@ -38,6 +38,10 @@ in {
       efiSysMountPoint = "/boot";
     };
   };
+  boot.plymouth.enable = true;
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.enableRedistributableFirmware = true;
 
   networking.hostName = "hoy-compramos-tuercas"; # Define your hostname.
   # Pick only one of the below networking options.
