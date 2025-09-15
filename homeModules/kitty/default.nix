@@ -7,7 +7,7 @@
     enable = true;
     shellIntegration.enableZshIntegration = true;
     themeFile = "GruvboxMaterialDarkSoft";
-    font.name = "DaddyTimeMono Nerd Font";
+    font.name = "JetBrainsMono Nerd Font";
     font.package = pkgs.nerd-fonts.bigblue-terminal;
     font.size = 13;
   };

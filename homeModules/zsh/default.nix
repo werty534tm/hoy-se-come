@@ -6,6 +6,7 @@
   programs.zsh = {
     shellAliases = {
       # Basic aliases
+      ls = "lsd";
       ll = "lsd -l";
       la = "lsd -la";
       tree = "lsd --tree";

@@ -133,7 +133,7 @@ in {
 
   fonts.packages = [
     pkgs.nerd-fonts.bigblue-terminal
-    pkgs.nerd-fonts.daddy-time-mono
+    pkgs.nerd-fonts.jetbrains-mono
   ];
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
