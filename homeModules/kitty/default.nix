@@ -6,8 +6,9 @@
   programs.kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
-    themeFile = "GruvboxMaterialLightSoft";
-    font.name = "BigBlueTermPlus Nerd Font";
+    themeFile = "GruvboxMaterialDarkSoft";
+    font.name = "DaddyTimeMono Nerd Font";
     font.package = pkgs.nerd-fonts.bigblue-terminal;
+    font.size = 13;
   };
 }

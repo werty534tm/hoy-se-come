@@ -39,6 +39,7 @@
     hyprpaper
     zinit
     zoxide
+    jetbrains.idea-community-bin
     inputs.quickshell.packages."x86_64-linux".default
   ];
 

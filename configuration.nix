@@ -11,6 +11,7 @@
   sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "jake_the_dog";
   };
+  unstable = import <nixos-unstable> {config = {allowUnfree = true;};};
 in {
   imports = [
     ./hardware-configuration.nix
@@ -86,12 +87,33 @@ in {
 
     # Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
+
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+        };
+        charger = {
+          governor = "performance";
+          turbo = "auto";
+        };
+      };
+    };
+
+    buffyboard.settings.input.tochscreen = true;
+  };
+
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.zsh-upmyass = {
     isNormalUser = true;
-    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "docker"]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -111,6 +133,7 @@ in {
 
   fonts.packages = [
     pkgs.nerd-fonts.bigblue-terminal
+    pkgs.nerd-fonts.daddy-time-mono
   ];
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -133,6 +156,11 @@ in {
     openssh
     neovim
     python3
+    scala-next
+    sbt
+    ammonite
+    scalafmt
+    coursier
     curl
     fastfetch
     wget
@@ -141,6 +169,11 @@ in {
     zsh-powerlevel10k
     sddm-theme
     sddm-theme.test
+    docker
+    docker-init
+    docker-compose
+    lazydocker
+    unstable.olympus
   ];
 
   nixpkgs.config = {

@@ -13,7 +13,10 @@
       # Theming
       {
         plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
+        config = ''
+          set background=dark
+          colorscheme gruvbox
+        '';
       }
       # File tree
       {
