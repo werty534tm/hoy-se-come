@@ -48,6 +48,7 @@
     };
     enable = true;
     enableCompletion = false;
+    # completionInit = "autoload -U compinit && compinit -d";
 
     initContent = lib.mkOrder 1000 ''
       ${lib.readFile ./zinit.zsh}

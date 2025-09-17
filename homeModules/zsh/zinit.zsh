@@ -12,7 +12,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-
 #╔═════════════╗
 #║ Plugiiins :D║
 #╚═════════════╝
@@ -40,8 +39,8 @@ zinit light Aloxaf/fzf-tab
 zinit ice silent wait'!2'
 zinit light MichaelAquilina/zsh-you-should-use
 
-unsetopt BEEP # <- Most importtannt part of the config
-CASE_SENSITIVE="TRUE"
+unsetopt BEEP # <- Most important part of the config
 
 unalias zi
 eval "$(zoxide init zsh)"
+
