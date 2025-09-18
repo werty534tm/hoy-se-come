@@ -54,6 +54,10 @@ in {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
             installation_mode = "force_installed";
           };
+          # Kirby9 theme
+          "{46ca3553-b1b7-442e-8f5b-08d3e2a54c5f}" = {
+            installation_mode = "allowed";
+          };
           # Privacy Badger:
           "jid1-MnnxcxisBPnSXQ@jetpack" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";

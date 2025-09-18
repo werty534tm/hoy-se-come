@@ -6,6 +6,7 @@
   programs.zsh = {
     shellAliases = {
       # Basic aliases
+      fastfetch = "fastfetch --config examples/20";
       ls = "lsd";
       ll = "lsd -l";
       la = "lsd -la";
