@@ -6,7 +6,7 @@
   programs.zsh = {
     shellAliases = {
       # Basic aliases
-      fastfetch = "fastfetch --config examples/20";
+      fastfetch = "fastfetch --logo ~/Downloads/logo_nixos.png --config examples/6";
       ls = "lsd";
       ll = "lsd -l";
       la = "lsd -la";

@@ -40,8 +40,13 @@
     zinit
     zoxide
     jetbrains.idea-community-bin
+    gruvbox-plus-icons
     inputs.quickshell.packages."x86_64-linux".default
   ];
+
+  gtk.iconTheme.package = pkgs.gruvbox-plus-icons;
+  gtk.iconTheme.name = "gruvbox-plus-icons";
+  gtk.enable = true;
 
   nixpkgs.config = {
     /*

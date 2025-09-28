@@ -180,6 +180,7 @@ in {
     openssh
     neovim
     python3
+    jetbrains.pycharm-community-bin
     scala-next
     sbt
     ammonite
