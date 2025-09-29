@@ -21,6 +21,11 @@
 
   home.stateVersion = "25.05"; # NO CAMBIAR
 
+  services.wlsunset = {
+    enable = true;
+    longitude = -3.16;
+    latitude = 40.63;
+  };
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
