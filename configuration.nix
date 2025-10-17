@@ -80,6 +80,8 @@ in {
   };
 
   services = {
+    udisks2.enable = true;
+
     xserver.enable = true;
 
     blueman.enable = true;
@@ -164,6 +166,11 @@ in {
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     sddm-astronaut
+    jflap
+    antlr
+    (flameshot.override
+      {enableWlrSupport = true;})
+    udiskie
     nix-output-monitor
     networkmanagerapplet
     kdePackages.full
@@ -188,6 +195,7 @@ in {
     coursier
     curl
     fastfetch
+    hyfetch
     wget
     brightnessctl
     libnotify
