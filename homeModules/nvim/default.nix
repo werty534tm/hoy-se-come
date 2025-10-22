@@ -145,6 +145,7 @@
       lua-language-server
       nixd
       yaml-language-server
+      metals
 
       # Formatters
       stylua
