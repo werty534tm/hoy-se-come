@@ -30,6 +30,7 @@
   # environment.
   home.packages = with pkgs; [
     tree-sitter
+    coursier
     haskellPackages.patat
     ripgrep
     vesktop

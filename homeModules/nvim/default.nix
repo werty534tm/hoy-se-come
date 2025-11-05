@@ -11,13 +11,21 @@
 
     plugins = with pkgs.vimPlugins; [
       # Theming
+      # {
+      #   plugin = gruvbox-nvim;
+      #   config = ''
+      #     set background=dark
+      #     colorscheme gruvbox
+      #   '';
+      # }
       {
-        plugin = gruvbox-nvim;
+        plugin = onedark-nvim;
         config = ''
           set background=dark
-          colorscheme gruvbox
+          colorscheme onedark
         '';
       }
+
       # File tree
       {
         plugin = yazi-nvim;
@@ -65,6 +73,14 @@
         type = "lua";
         config = ''
           ${builtins.readFile ./plugins/lspconfig.lua}
+        '';
+      }
+      # Better metals scala lsp plugin
+      {
+        plugin = nvim-metals;
+        type = "lua";
+        config = ''
+          ${builtins.readFile ./plugins/scala-metals.lua}
         '';
       }
       # Loading status
@@ -116,6 +132,13 @@
 
       # Treesitter
       nvim-treesitter.withAllGrammars
+      {
+        plugin = nvim-treesitter.withAllGrammars;
+        type = "lua";
+        config = ''
+          ${builtins.readFile ./plugins/treesitter.lua}
+        '';
+      }
 
       # Dependencias
       # For too many things :C
