@@ -172,6 +172,7 @@ in {
     (flameshot.override
       {enableWlrSupport = true;})
     udiskie
+    killall
     nix-output-monitor
     networkmanagerapplet
     # kdePackages.full

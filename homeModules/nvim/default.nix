@@ -26,6 +26,17 @@
         '';
       }
 
+      # Colorizer
+      {
+        plugin = nvim-colorizer-lua;
+        type = "lua";
+        config = ''
+          require("colorizer").setup({
+            filetypes = { "*" }
+          })
+        '';
+      }
+
       # Gitsigns
       {
         plugin = gitsigns-nvim;
@@ -149,6 +160,15 @@
         '';
       }
 
+      # Noice
+      {
+        plugin = noice-nvim;
+        type = "lua";
+        config = ''
+          ${builtins.readFile ./plugins/noice.lua}
+        '';
+      }
+
       # Dependencias
       # For too many things :C
       nvim-web-devicons
@@ -165,6 +185,10 @@
       cmp-buffer
       cmp_luasnip
       luasnip
+
+      # Noice dependencies
+      nui-nvim
+      nvim-notify
     ];
 
     extraLuaConfig = ''
