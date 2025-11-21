@@ -5,9 +5,9 @@
   inputs,
   ...
 }: let
-  sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
-    theme = "rei";
-  };
+  # sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
+  #   theme = "rei";
+  # };
   sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "jake_the_dog";
   };
@@ -90,7 +90,7 @@ in {
       package = pkgs.kdePackages.sddm;
       enable = true;
       theme = "sddm-astronaut-theme";
-      extraPackages = sddm-theme.propagatedBuildInputs;
+      # extraPackages = sddm-theme.propagatedBuildInputs;
       settings = {
         # required for styling the virtual keyboard
         General = {
@@ -174,8 +174,17 @@ in {
     udiskie
     nix-output-monitor
     networkmanagerapplet
-    kdePackages.full
+    # kdePackages.full
     kdePackages.qtquick3d
+    kdePackages.qtmultimedia
+    kdePackages.qtbase
+    kdePackages.qtdeclarative
+    kdePackages.qtsvg
+    kdePackages.qtshadertools
+    kdePackages.qtwayland
+    cli11
+    pkg-config
+    cmake
     eza
     lsd
     wl-clipboard
@@ -201,8 +210,8 @@ in {
     brightnessctl
     libnotify
     zsh-powerlevel10k
-    sddm-theme
-    sddm-theme.test
+    # sddm-theme
+    # sddm-theme.test
     docker
     docker-init
     docker-compose

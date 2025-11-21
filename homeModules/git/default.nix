@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   programs.git = {
     enable = true;
-    userEmail = "tomascanosanta@gmail.com";
-    userName = "werty534tm";
+    settings = {
+      user.name = "werty534tm";
+      user.email = "tomascanosanta@gmail.com";
+    };
   };
 }

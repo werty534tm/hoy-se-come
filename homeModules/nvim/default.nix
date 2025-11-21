@@ -26,6 +26,15 @@
         '';
       }
 
+      # Gitsigns
+      {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = ''
+          require("gitsigns").setup()
+        '';
+      }
+
       # File tree
       {
         plugin = yazi-nvim;
