@@ -16,6 +16,8 @@ in {
   imports = [
     ./hardware-configuration.nix
     ./modules/firefox.nix
+    ./modules/firewall.nix
+    ./modules/k3s.nix
   ];
 
   # Enable zram intead of swap
@@ -155,6 +157,7 @@ in {
     hyprland.enable = true;
     git.enable = true;
     zsh.enable = true;
+    niri.enable = true;
   };
 
   fonts.packages = [
@@ -165,6 +168,7 @@ in {
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    xwayland-satellite
     sddm-astronaut
     openjdk
     jflap
@@ -218,6 +222,17 @@ in {
     docker-compose
     lazydocker
     unstable.olympus
+    dosbox
+    dolphin-emu
+    cemu
+    k3d
+    docker-compose
+    lazydocker
+    k9s
+    kdePackages.okular
+    coreutils-full
+    obsidian
+    qFlipper
   ];
 
   nixpkgs.config = {
